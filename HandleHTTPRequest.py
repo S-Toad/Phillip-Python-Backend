@@ -7,19 +7,19 @@ class RequestType(Enum):
 
 class HttpHandler(BaseHTTPServer.BaseHTTPRequestHandler):
   #def __init__(self):
-	
-	def do_SEND_HEADERS(self):
-		self.send_response(200)
-		self.send_header('Content-type', 'text/html')
-		self.end_headers()
+  
+  def do_SEND_HEADERS(self):
+    self.send_response(200)
+    self.send_header('Content-type', 'text/html')
+    self.end_headers()
     
   def do_GET(self):
     print("Received GET request for: %s" % (self.path,))
-		do_SEND_HEADERS()
-		
+    do_SEND_HEADERS()
+    
   def do_POST(self):
     print("Received POST request for: %s" % (self.path,))
-		do_SEND_HEADERS()
+    do_SEND_HEADERS()
 
 if __name__ = '__main__':
   serverClass = BaseHTTPServer.HTTPServer
