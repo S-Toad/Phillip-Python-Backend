@@ -21,7 +21,7 @@ class HttpHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     print("Received POST request for: %s" % (self.path,))
     do_SEND_HEADERS()
 
-if __name__ = '__main__':
+if __name__  == '__main__':
   serverClass = BaseHTTPServer.HTTPServer
   httpd = serverClass(('127.0.0.1', 80), HttpHandler)
   httpd.server_forever()
